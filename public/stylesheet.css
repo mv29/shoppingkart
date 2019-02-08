@@ -1,0 +1,98 @@
+
+h1{
+    height: 167px;
+    text-align: center;
+    font-size: 95px;
+    padding: 15px;
+    background: firebrick;
+    color: ghostwhite;
+}
+.fb{
+    background:midnightblue ;
+    text-align: center;
+    color: ghostwhite;
+    height:40px;
+    width: 60px;
+}
+.git{
+    background: lightslategray;
+    text-align: center;
+    color: black;
+    height:40px;
+    width: 60px;
+}
+.twiiter{
+    background:  #00aced;
+    text-align: center;
+    color: black;
+    height:40px;
+    width: 60px;
+}
+input{
+    width: 350px;
+}
+label{
+    font-size: 22px;
+    color: firebrick;
+}
+.upper
+{
+    background-color: firebrick;
+    color:whitesmoke;
+    height: 180px;
+}
+.lower
+{
+    background-color: lightgray;
+    color:whitesmoke;
+    height: 140px;
+}
+.mv{
+    text-align: center;
+}
+.form{
+    background-color: lightgray;
+    margin:20px;
+    padding: 20px;
+}
+hr {
+    display: block;
+    border-style: inset;
+    border-width: 2px;
+}
+.user:hover{
+    background-color: firebrick; /* Green */
+    color: white;
+}
+#navbarNav ul li a {
+    text-align: center;
+    color: white;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 20px;
+}
+#navbarNav ul li a:hover {
+    text-align: center;
+    background-color: white;
+    color:firebrick;
+}
+#footer{
+    padding: 15px 0;
+    background: -moz-linear-gradient(top, #a03333, #32a0a0);
+    background: -webkit-linear-gradient(top, #a03333, #32a0a0);
+    background: -o-linear-gradient(top, #a03333, #32a0a0);
+    background: -ms-linear-gradient(top, #a03333, #32a0a0);
+    background: linear-gradient(top, #a03333, #32a0a0); color: #fff
+}
+.products{
+    padding: 0px;
+    height:300px;
+    margin:0px;
+    width:300px
+}
+h2{
+    margin-top:90px;
+    margin-bottom:0%;
+    padding-bottom: 0px;
+    font-size: 60px;
+}

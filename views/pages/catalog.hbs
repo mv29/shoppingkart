@@ -1,0 +1,29 @@
+<br>
+<a href="/cart/add"  type="button" class="btn mv user">Towards Cart</a>
+<br><br>
+<h3> Checkout</h3>
+<div  style="background: firebrick" class="container" id="cart">
+
+</div>
+<br><br>
+
+<h3>Product</h3>
+<div class="container">
+    <div class="row" id="catalogpage">
+        <div class="container">
+            <div class="row" id="catalogpage">
+                {{#each item as |lol|}}
+                    <div class="col-md-4" style="margin-top:50px;">
+                        <div class="image">
+                            <a href="{{this.image}}"><img class="products"src="{{this.image}}"></a>
+                        </div>
+                        <p style="width:350px;margin:2px;background-color:darkgrey;text-align: center">{{this.name}}</p>
+                        <p style="width:350px;margin:2px;background-color:darkgrey;text-align: center ">Price : <span class="fa fa-rupee"></span> {{this.price}}</p>
+                        <p style="width:350px;margin:2px;background-color:darkgrey;text-align: center ">Categorie : {{this.categorie.name}}</p>
+                        <button type="button"  class="btn  btn-primary" id="mv" value="{{this.id}}">add</button>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

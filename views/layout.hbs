@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expenditure</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
+    <script src="/clientside.js"></script>
+    <link rel="stylesheet" href="/stylesheet.css">
+</head>
+<body>
+<h1>ShoppingKart</h1>
+<br>
+<nav class="navbar navbar-expand-lg navbar-light navbar-fixed-bottom" style="background-color: maroon; ">
+    <a class="navbar-brand fa fa-shopping-cart" href="#" style="font-size: 40px; padding-bottom:4px; padding-right: 10px;padding-left: 10px" > ShoppingKart </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/cart/add">Cart</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/catalog">Catalog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/profile/user">Profile</a>
+            </li>
+            {{#if login}}
+                <li class="nav-item">
+                  <!--  <a class="nav-link" href="/logout">Logout</a>-->
+                    <form action="/logout" method="get" >
+                        <button class="btn mv user"  style="margin: 7px" id="logout">Logout</button>
+                    </form>
+                </li>
+            {{else}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/signup">Signup</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+            {{/if}}
+            {{#if  admin1}}
+            <li class="nav-item active">
+                <a class="nav-link" href="/categories">Categories</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/products">Products</a>
+            </li>
+            {{/if}}
+        </ul>
+    </div>
+</nav>
+<div class="container lol">
+    {{{body}}}
+</div>
+<br><br><br><br><br><br><br>
+
+<footer class="page-footer font-small" id="footer" >
+
+    <!--Footer Links-->
+    <div class="container text-center text-md-left">
+        <div class="row my-4">
+
+            <!--First column-->
+            <div class="col-md-4 col-lg-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Footer Content</h5>
+                <p>
+                    It's no longer just the privilege of a metro city or an urban area to shop online for their favorite products.
+                    ShoppingKart is one online shopping site that has made it possible for consumers even in the remote areas of India
+                    to avail products from the best brands at low prices online.</p>
+            </div>
+            <!--/.First column-->
+
+            <hr class="clearfix w-100 d-md-none">
+
+            <!--Second column-->
+            <div class="col-md-2 col-lg-2 ml-auto">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Nav</h5>
+                <ul class="list-unstyled">
+                    <p>
+                        <a href="http://localhost:3210/profile/user">Profile</a>
+                    </p>
+                    <p>
+                        <a href="http://localhost:3210/catalog">Catalog</a>
+                    </p>
+                    <p>
+                        <a href="http://localhost:3210/cart/add">Cart</a>
+                    </p>
+                    <p>
+                        <a href="http://localhost:3210/home">Home</a>
+                    </p>
+
+                </ul>
+            </div>
+            <!--/.Second column-->
+
+            <hr class="clearfix w-100 d-md-none">
+
+            <!--Third column-->
+            <div class="col-md-4 col-lg-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Address</h5>
+                <!--Info-->
+                <p>
+                    <i class="fa fa-home mr-3"></i>ys-21,Shiva Enclave,Paschim Vihar East,India</p>
+                <p>
+                    <i class="fa fa-envelope mr-3"></i>shoppingkart29@gmail.com</p>
+                <p>
+                    <i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
+                <p>
+                    <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
+            </div>
+            <!--/.Third column-->
+
+            <hr class="clearfix w-100 d-md-none">
+
+            <!--Fourth column-->
+            <div class="col-md-2 col-lg-2 text-center">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Follow Us</h5>
+                <!--Social buttons-->
+                <div class="mt-2">
+                    <!--Facebook-->
+                    <a type="button" class="btn fb">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <br>
+                    <!--Twitter-->
+                    <a type="button" class="btn twiiter">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <br>
+                    <!--Google +-->
+                    <a type="button" class="btn git ">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+                    <br>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<br>
+<h1 style=" text-align:center; height:75px; background: firebrick; color: ghostwhite; font-size: 50px;" >Your Profile</h1>
+
+
+<h2>Wish List</h2>
+<br>
+<div class="container">
+    <table class="table table-hover">
+        <thead style=" color: firebrick ">
+        <tr>
+            <th>name</th>
+            <th>vendor</th>
+            <th>price</th>
+            <th>quantity</th>
+            <th>categorie</th>
+            <th>tax</th>
+            <th>added at</th>
+            <th>add to cart</th>
+        </tr>
+        </thead>
+        <tbody id="lol">
+        {{#each item as |lol|}}
+        {{#if state}}
+        <tr>
+     <td>{{this.product.name}}</td>
+     <td>{{this.product.vendor}}</td>
+     <td>{{this.product.price}}</td>
+     <td>{{this.quantity}}</td>
+     <td>{{this.product.categorie.name}}</td>
+     <td>{{this.product.categorie.tax}}</td>
+        <td>{{this.updatedAt}}</td>
+        <td><button type="button"  class="btn  btn-primary " id="listwish"  value="{{this.productId}}">add</button></td>
+        </tr>
+        {{/if}}
+    {{/each}}
+    </tbody>
+    </table>
+</div>
+
+<h2>Happy Buyings</h2>
+<br>
+<div class="container">
+    <table class="table table-hover">
+        <thead style=" color: firebrick">
+        <tr>
+            <th>name</th>
+            <th>vendor</th>
+            <th>price</th>
+            <th>quantity</th>
+            <th>categorie</th>
+            <th>tax</th>
+            <th>added at</th>
+        </tr>
+        </thead>
+        <tbody id="lol">
+        {{#each item as |lol|}}
+    {{#unless state}}
+            <tr>
+                <td>{{this.product.name}}</td>
+                <td>{{this.product.vendor}}</td>
+                <td>{{this.product.price}}</td>
+                <td>{{this.quantity}}</td>
+                <td>{{this.product.categorie.name}}</td>
+                <td>{{this.product.categorie.tax}}</td>
+                <td>{{this.updatedAt}}</td>
+            </tr>
+            {{/unless}}
+        {{/each}}
+        </tbody>
+    </table>
+</div>

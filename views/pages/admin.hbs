@@ -1,0 +1,29 @@
+
+
+<div conatiner="fluid" style="margin: 80px">
+
+    <h3>Change Secret</h3>
+        <form action="/admin/secret" method="post" class="form">
+            <label><b>Previous Secret</b></label> <br>
+            <input type="text" name="Previous_Secret" required autofocus><br>
+            <label><b>New Secret</b></label><br>
+            <input type="text" name="New_Secret"  required autofocus><br>
+            <label><b>Admin Password</b></label><br>
+            <input type="password" name="Password" required autofocus><br>
+            <input type="submit" id="secret" class="btn user" style="width: 350px; border: 2px solid firebrick;" value="Submit">
+            <br>
+        </form>
+    <br><br>
+
+      <h3>Change Admin Password</h3>
+    <form action="/admin/password" method="post" class="form">
+        <label><b>Admin Secret</b></label> <br>
+        <input type="text" name="Previous_Secret" required autofocus><br>
+        <label><b>Previous Password</b></label> <br>
+        <input type="Password" name="Password" required autofocus><br>
+        <label><b>New Password</b></label><br>
+        <input type="password" name="New_Password" required autofocus><br>
+        <input type="submit" class="btn user" style="width: 350px; border: 2px solid firebrick;" value="Submit">
+        <br>
+    </form>
+</div>
