@@ -20,8 +20,9 @@ let mailOptions,host,link,user_email;
 let tokens=[];
 
 route.get('/send',function(req,res){
+
     let token=Math.floor((Math.random() * 100) + 54);
-    tokens.push(token)
+    tokens.push(token);
     host=req.get('host');
     link="http://"+req.get('host')+"/email/verify?id="+token;
     user_email=req.query.x;
@@ -44,8 +45,10 @@ route.get('/send',function(req,res){
 });
 
 route.get('/verify',function(req,res){
- //   console.log("request for verification came");
-    console.log(req.protocol+":/"+req.get('host'));
+
+
+  console.log(req.protocol+":/"+req.get('host'));
+
     if((req.protocol+"://"+req.get('host'))==("http://"+host)) {
 
         console.log("Domain is matched. Information is from Authentic email");
@@ -98,6 +101,8 @@ route.get('/verify',function(req,res){
         res.end("<h1>Request is from unknown source");
     }
 });
+
+
 // signup
 route.get('/',function (req,res) {
 

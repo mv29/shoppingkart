@@ -20,12 +20,8 @@ route.get('/wishlist',(req,res) => {
     else
     {
         // mv array all the prodcuts are added to wishlist
-        console.log("1****************************************************************************")
-        console.log("fuck ",mv.length);
          for (i = 0; i < mv.length; i++) {
              let lol=mv[i].quantity;
-             console.log("2****************************************************************************")
-             console.log("motherfucker ",lol,"\n",mv );
              if(lol<1)
                  continue;
              console.log(mv[i].name);
@@ -43,8 +39,6 @@ route.get('/wishlist',(req,res) => {
                      state: true,
                  }
              }).spread((user, created) => {
-                 console.log("3**********************************************************")
-                    console.log(" randi" ,item)
                     if(!created)
                     {
                         user.updateAttributes(
@@ -111,7 +105,6 @@ route.get('/user',(req,res) => { // retriving information form the database
     }
     else
     {
-        console.log("4****************************************************************")
         let fuckoff;
         let mv = cartitem.findAll(
             {
@@ -132,7 +125,6 @@ route.get('/user',(req,res) => { // retriving information form the database
               }]
             }
         ).then(mv => {
-            console.log("cartitems rendered");
             if (req.user.admin===true) {
                 res.render('profile', {admin1: true, login: true,item: mv});
             }

@@ -70,11 +70,9 @@ route.get('/senddata',(req,res)=>{
 route.get('/adddata',(req, res) => {
 
     // for adding and then sending the array
-    console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
 
     for (let i = 0; i < cart.length; i++)
     {
-      console.log(cart[i].productId , " ",req.query.x);
       if(cart[i].productId===parseInt(req.query.x))
           cart[i].quantity++;
 

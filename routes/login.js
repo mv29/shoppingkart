@@ -12,6 +12,7 @@ route.post('/', passport.authenticate('local', {
     failureRedirect: '/login',
 }));
 
+
 // facebook
 route.get('/facebook', passport.authenticate('facebook', {
     scope : ['public_profile', 'email']
@@ -26,6 +27,8 @@ route.get('/facebook/callback',
 );
 //
 // github
+
+
 route.get('/github', passport.authenticate('github'));
 
 route.get('/github/callback',
@@ -36,10 +39,8 @@ route.get('/github/callback',
         }
     )
 );
-function lol (req,res,next) {
-    console.log("fuck");
-    next();
-}
+
+
 route.get('/twitter', passport.authenticate('twitter', {
     scope : ['public_profile', 'email']
 }));

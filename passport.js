@@ -54,7 +54,7 @@ const github = new GitHub({
 
         clientID        : 'XYZ',
         clientSecret    : 'XYZ',
-        callbackURL     : "http://localhost:3210/login/github/callback",
+        callbackURL     : "http://localhost:3229/login/github/callback",
     },
     function(token, refreshToken, profile, done) {
 
@@ -90,7 +90,7 @@ const twitter = new Twitter({
 
         consumerKey        : 'XYZ',
         consumerSecret    : 'XYZ',
-        callbackURL     : "http://localhost:3210/login/twitter/callback",
+        callbackURL     : "http://localhost:3229/login/twitter/callback",
     },
     function(token, refreshToken, profile, done) {
 
@@ -127,7 +127,7 @@ const facebook= new FacebookStrategy({
 
         clientID        : 'XYZ',
         clientSecret    : 'XYZ',
-        callbackURL     : "http://localhost:3210/login/facebook/callback",
+        callbackURL     : "http://localhost:3229/login/facebook/callback",
         profileFields: ['id', 'displayName', 'email', 'birthday', 'friends', 'first_name', 'last_name', 'middle_name', 'gender', 'link']
     },
     function(token, refreshToken, profile, done) {

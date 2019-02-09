@@ -145,8 +145,6 @@ $(function(){
     // functions with $.get() are invoked for each page change and refresh and to remove ths add them as window property
 
     $.get(`/catalog/senddata`,function(data){ // refreshes the catalog without rendering
-        console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
-        console.log(data)
         cartlsit(data);
     });
 

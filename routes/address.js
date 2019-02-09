@@ -81,7 +81,7 @@ route.post('/detail',function (req,res) {
                  state:req.body.state,
              }).then((user) =>{
                  console.log("updates done");
-                 let link= "http://localhost:3210/cart/add";
+                 let link= "http://localhost:3229/cart/add";
                  let profilename =req.user.name;
                  mailOptions={
                      from:emailid,
