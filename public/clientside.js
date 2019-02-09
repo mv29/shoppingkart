@@ -46,8 +46,10 @@ $(function(){
 
     // function of adding catalog items in the catalog page not cartitems
     function cartlsit(data){
+        console.log("asffafa",data.length)
         $('#cart').empty();
         for (let i = 0; i < data.length; i++) {
+            console.log(data[i])
             if(data[i].quantity<1)
                 continue;
             $("#cart").append(
@@ -143,6 +145,8 @@ $(function(){
     // functions with $.get() are invoked for each page change and refresh and to remove ths add them as window property
 
     $.get(`/catalog/senddata`,function(data){ // refreshes the catalog without rendering
+        console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+        console.log(data)
         cartlsit(data);
     });
 

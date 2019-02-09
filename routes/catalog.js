@@ -45,8 +45,6 @@ route.get('/',(req,res) =>{
                    })
                }
            }
-           console.log("******************************************************************")
-           console.log(mv)
            if (req.user.admin===true)
            {
                res.render('catalog', {admin1: true, login: true,item: mv});
@@ -72,15 +70,15 @@ route.get('/senddata',(req,res)=>{
 route.get('/adddata',(req, res) => {
 
     // for adding and then sending the array
+    console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
 
     for (let i = 0; i < cart.length; i++)
     {
-
-      if(cart[i].productId===req.query.x)
+      console.log(cart[i].productId , " ",req.query.x);
+      if(cart[i].productId===parseInt(req.query.x))
           cart[i].quantity++;
 
     }
-
     res.redirect('/catalog/senddata');
 });
 

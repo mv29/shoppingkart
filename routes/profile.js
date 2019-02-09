@@ -132,9 +132,6 @@ route.get('/user',(req,res) => { // retriving information form the database
               }]
             }
         ).then(mv => {
-            console.log("5***********************************************************")
-            console.log(mv);
-            console.log("asdfasdf ",typeof(mv));
             console.log("cartitems rendered");
             if (req.user.admin===true) {
                 res.render('profile', {admin1: true, login: true,item: mv});
