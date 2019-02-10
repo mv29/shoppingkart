@@ -53,5 +53,5 @@ app.engine('hbs', hbs.express4({
 app.set('views', path.join(__dirname, 'views/pages'))
 app.use('/', express.static(__dirname + '/public')); // app.use returns a function
 app.listen('3229',()=> {  // inline arrow function
-     console.log("server running on http://localhost:3229");
+     console.log("server running on https://localhost:3229");
 });

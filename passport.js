@@ -4,10 +4,15 @@ const User = require('./db/models').user;
 const FacebookStrategy =require('passport-facebook').Strategy;
 const GitHub =require('passport-github').Strategy;
 const Twitter =require('passport-twitter').Strategy;
+const data =require('../config');
+
+
+
 
 passport.serializeUser((user, done) => {
     return done(null, user.id)
 });
+
 
 passport.deserializeUser((userId, done) => {
     User.find({
@@ -17,6 +22,8 @@ passport.deserializeUser((userId, done) => {
     }).then(user => done(null, user))
         .catch((err) => console.log(err))
 });
+
+
 const localStrategy = new LocalStrategy(
     {
         usernameField: 'email',
@@ -52,8 +59,8 @@ const localStrategy = new LocalStrategy(
     );
 const github = new GitHub({
 
-        clientID        : 'XYZ',
-        clientSecret    : 'XYZ',
+        clientID        : data.github.client_id,
+        clientSecret    : data.github.client_secret,
         callbackURL     : "http://localhost:3229/login/github/callback",
     },
     function(token, refreshToken, profile, done) {
@@ -88,15 +95,15 @@ const github = new GitHub({
 
 const twitter = new Twitter({
 
-        consumerKey        : 'XYZ',
-        consumerSecret    : 'XYZ',
+        consumerKey        :  data.twitter.client_id,
+        consumerSecret    :  data.twitter.client_secret,
         callbackURL     : "http://localhost:3229/login/twitter/callback",
     },
     function(token, refreshToken, profile, done) {
 
         console.log(profile);
         process.nextTick(function() {
-            user.findOne({
+            User.findOne({
                 where: {
                     name: profile.username
                 }
@@ -125,8 +132,8 @@ const twitter = new Twitter({
 
 const facebook= new FacebookStrategy({
 
-        clientID        : 'XYZ',
-        clientSecret    : 'XYZ',
+        clientID        :  data.facebook.client_id,
+        clientSecret    :  data.facebook.client_secret,
         callbackURL     : "http://localhost:3229/login/facebook/callback",
         profileFields: ['id', 'displayName', 'email', 'birthday', 'friends', 'first_name', 'last_name', 'middle_name', 'gender', 'link']
     },
@@ -134,7 +141,7 @@ const facebook= new FacebookStrategy({
 
      console.log(profile);
         process.nextTick(function() {
-            user.findOne({
+            User.findOne({
                 where: {
                     name: profile.displayName
                 }
@@ -157,6 +164,8 @@ const facebook= new FacebookStrategy({
             })
         });
     });
+
+
 passport.use(localStrategy);
 passport.use(github);
 passport.use(facebook);

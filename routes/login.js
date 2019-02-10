@@ -46,7 +46,7 @@ route.get('/twitter', passport.authenticate('twitter', {
 }));
 
 route.get('/twitter/callback',
-    passport.authenticate('github',
+    passport.authenticate('twitter',
         {
             successRedirect: '/email',
             failureRedirect: '/login',
