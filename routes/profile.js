@@ -105,7 +105,6 @@ route.get('/user',(req,res) => { // retriving information form the database
     }
     else
     {
-        let fuckoff;
         let mv = cartitem.findAll(
             {
                 where:{

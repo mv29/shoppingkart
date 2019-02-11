@@ -34,7 +34,6 @@ route.post('/secret', (req, res) => {
         }
     }).then((admin) => {
         console.log(admin);
-        console.log("fuck");
         // updating the attribute code (Secret Update)
         admin.updateAttributes(
             {
@@ -76,7 +75,6 @@ route.post('/password', (req, res) => {
         }
     }).then((admin) => {
         console.log(admin);
-        console.log("fuck");
         // updating the attribute code (password update)
         admin.updateAttributes(
             {

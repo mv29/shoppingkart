@@ -13,8 +13,6 @@ route.post('/', (req, res) => {
   // retriving the secret from the database
      Admin.findAll()
          .then((Admin) => {
-             console.log("fuck you asynch nature");
-             console.log(Admin[0].secret);
              if (x==Admin[0].secret) { // admin login
                  user.create({
                      name: req.body.email, // req.body.email provides the username

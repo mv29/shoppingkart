@@ -5,7 +5,6 @@ let data;
 route.get('/',(req,res) =>
     {
         if (!req.user ) {
-            console.log("mrinal");
             return res.redirect('/login')
         }
         else if (req.user.active ==false)

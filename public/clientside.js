@@ -46,7 +46,6 @@ $(function(){
 
     // function of adding catalog items in the catalog page not cartitems
     function cartlsit(data){
-        console.log("asffafa",data.length)
         $('#cart').empty();
         for (let i = 0; i < data.length; i++) {
             console.log(data[i])

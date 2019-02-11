@@ -7,8 +7,6 @@ const Twitter =require('passport-twitter').Strategy;
 const data =require('../config');
 
 
-
-
 passport.serializeUser((user, done) => {
     return done(null, user.id)
 });
@@ -38,20 +36,16 @@ const localStrategy = new LocalStrategy(
           //  console.log(user);
             if (!user) {
                 //Wrong username
-                console.log("fuck loda");
                 return done(null, false, {message: 'Wrong username'})
             }
             if (user.password === password) {
                 // Correct user and password
-                console.log("two");
                 return done(null, user)
             } else {
                 // Correct username, wrong password
-                console.log("three");
                 return done(null, false, {message: 'Wrong password'})
             }
         }).catch((err) => {
-             console.log("four");
             console.log(err);
             return done(err)
         })

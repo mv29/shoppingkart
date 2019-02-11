@@ -24,7 +24,6 @@ route.get('/',(req,res) => {
                         attributes: ['name','tax']
                     }] }
         ).then((item) => {
-            console.log("lol ",item);
             if (req.user.admin==true) {
                 res.render('product', {admin1: true, login: true ,item: item});
             }
